@@ -1,21 +1,15 @@
-<h1>Coktails</h1>
+<div class="card-category">
+  Cocktails
+</div>
 
-<table class="container">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Details</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image_tag 'banner.jpg'">
+      <%= link_to "#{cocktail.name}", cocktail %>
+    </div>
+  <% end %>
+</div>
+
 <br>
 <p><%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-primary" %></p>
