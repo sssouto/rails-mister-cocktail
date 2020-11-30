@@ -1,0 +1,21 @@
+<h1>Coktails</h1>
+
+<table class="container">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cocktails.each do |cocktail| %>
+      <tr>
+        <td><%= cocktail.name %></td>
+        <td><%= link_to 'Show', cocktail %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<p><%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn-primary" %></p>
