@@ -1,14 +1,12 @@
-<div class="card-category">
-  Cocktails
-</div>
 
-
-<div class="cards">
-  <% @cocktails.each do |cocktail| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image_tag 'banner.jpg'">
-      <%= link_to "#{cocktail.name}", cocktail %>
-    </div>
-  <% end %>
+<div class="container mt-5">
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image_tag 'banner.jpg'">
+        <%= link_to "#{cocktail.name}", cocktail %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <br>
