@@ -1,14 +1,21 @@
-<h1>Add a new cocktail</h1>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "banner.jpg" %>')">
+  <h1>Add a new cocktail</h1>
+</div>
 
-<%= simple_form_for(@cocktail) do |f| %>
+<div class="container mt-5">
+  <%= simple_form_for(@cocktail) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :photo, as: :file %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  <br>
+  <div>
+    <p><%= link_to '<i class="fas fa-backward"></i> Back'.html_safe, cocktails_path, class: "btn btn-secondary"%></p>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
-<% end %>
-
-<p><%= link_to '<i class="fas fa-backward"></i> Back'.html_safe, cocktails_path, class: "btn btn-secondary"%></p>
+</div>
